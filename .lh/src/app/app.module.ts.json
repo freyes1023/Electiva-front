@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/app/app.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1700088563912,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700089830610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,16 @@\n import { BrowserModule } from '@angular/platform-browser';\n \n import { AppRoutingModule } from './app-routing.module';\n import { AppComponent } from './app.component';\n+import { ProductsModule } from './components/products/products.module';\n @NgModule({\n   declarations: [\n     AppComponent,\n   ],\n   imports: [\n     BrowserModule,\n+    ProductsModule,\n     AppRoutingModule\n   ],\n   providers: [],\n   bootstrap: [AppComponent]\n"
+                },
+                {
+                    "date": 1700092865185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,16 +3,18 @@\n \n import { AppRoutingModule } from './app-routing.module';\n import { AppComponent } from './app.component';\n import { ProductsModule } from './components/products/products.module';\n+import { HttpClientModule } from '@angular/common/http';\n @NgModule({\n   declarations: [\n     AppComponent,\n   ],\n   imports: [\n     BrowserModule,\n     ProductsModule,\n-    AppRoutingModule\n+    AppRoutingModule,\n+    HttpClientModule,\n   ],\n   providers: [],\n   bootstrap: [AppComponent]\n })\n"
+                },
+                {
+                    "date": 1700101686168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n import { ProductsModule } from './components/products/products.module';\n import { HttpClientModule } from '@angular/common/http';\n @NgModule({\n   declarations: [\n-    AppComponent,\n+    AppComponent\n   ],\n   imports: [\n     BrowserModule,\n     ProductsModule,\n"
+                },
+                {
+                    "date": 1700115780683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n import { AppRoutingModule } from './app-routing.module';\n import { AppComponent } from './app.component';\n import { ProductsModule } from './components/products/products.module';\n import { HttpClientModule } from '@angular/common/http';\n+import { PagesModule } from './pages/pages.module';\n @NgModule({\n   declarations: [\n     AppComponent\n   ],\n@@ -13,8 +14,9 @@\n     BrowserModule,\n     ProductsModule,\n     AppRoutingModule,\n     HttpClientModule,\n+    PagesModule\n   ],\n   providers: [],\n   bootstrap: [AppComponent]\n })\n"
+                },
+                {
+                    "date": 1700200391482,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,18 +5,25 @@\n import { AppComponent } from './app.component';\n import { ProductsModule } from './components/products/products.module';\n import { HttpClientModule } from '@angular/common/http';\n import { PagesModule } from './pages/pages.module';\n+import { environment } from 'src/environments/environment';\n+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';\n+import { getStorage, provideStorage } from '@angular/fire/storage';\n @NgModule({\n   declarations: [\n     AppComponent\n   ],\n   imports: [\n     BrowserModule,\n+    \n     ProductsModule,\n     AppRoutingModule,\n     HttpClientModule,\n-    PagesModule\n+    PagesModule,\n+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),\n+    provideStorage(() => getStorage()),\n+   //  firebase.initializeApp(environment.firebaseConfig),\n   ],\n   providers: [],\n   bootstrap: [AppComponent]\n })\n"
+                }
+            ],
+            "date": 1700088563912,
+            "name": "Commit-0",
+            "content": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\n\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\n@NgModule({\n  declarations: [\n    AppComponent,\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/app/components/products/product/product.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1700093283137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700093868975,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,10 +11,19 @@\n     this._item = item;\n   \n   }\n   _item!: Product;\n+\n+  stars: number[] = [1, 2, 3, 4, 5];\n+  selectedValue: number = 0\n+  \n+\n   constructor() { }\n \n   ngOnInit(): void {\n   }\n+  countStar(star:any) {\n+    this.selectedValue = star;\n+    console.log('Value of star', star);\n+  }\n \n }\n"
+                },
+                {
+                    "date": 1700120545908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,4 +1,5 @@\n+import { ProductsService } from 'src/app/services/products/products.service';\n import { Component, Input, OnInit } from '@angular/core';\n import { Product } from 'src/app/models/product/product';\n \n @Component({\n@@ -16,14 +17,18 @@\n   stars: number[] = [1, 2, 3, 4, 5];\n   selectedValue: number = 0\n   \n \n-  constructor() { }\n+  constructor(private productsService:ProductsService) { }\n \n   ngOnInit(): void {\n   }\n   countStar(star:any) {\n     this.selectedValue = star;\n     console.log('Value of star', star);\n   }\n \n+  deleteItem(){\n+    this.productsService.deleteProduct(this._item.id);\n+  }\n+\n }\n"
+                },
+                {
+                    "date": 1700120944232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,8 @@\n import { ProductsService } from 'src/app/services/products/products.service';\n import { Component, Input, OnInit } from '@angular/core';\n import { Product } from 'src/app/models/product/product';\n+import Swal from 'sweetalert2'\n \n @Component({\n   selector: 'app-product',\n   templateUrl: './product.component.html',\n@@ -27,8 +28,22 @@\n     console.log('Value of star', star);\n   }\n \n   deleteItem(){\n-    this.productsService.deleteProduct(this._item.id);\n+    Swal.fire({\n+      title: \"Seguro deseas eliminar el producto?\",\n+    \n+      showCancelButton: true,\n+      confirmButtonText: \"Eliminar\",\n+    }).then((result) => {\n+      /* Read more about isConfirmed, isDenied below */\n+      if (result.isConfirmed) {\n+        this.productsService.deleteProduct(this._item.id)?.subscribe(()=>{\n+          Swal.fire(\"Saved!\", \"\", \"success\");\n+\n+        })\n+      } \n+    });\n+    \n   }\n \n }\n"
+                },
+                {
+                    "date": 1700121283014,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { ProductsService } from 'src/app/services/products/products.service';\n import { Component, Input, OnInit } from '@angular/core';\n import { Product } from 'src/app/models/product/product';\n import Swal from 'sweetalert2'\n+import { Router } from '@angular/router';\n \n @Component({\n   selector: 'app-product',\n   templateUrl: './product.component.html',\n@@ -18,9 +19,9 @@\n   stars: number[] = [1, 2, 3, 4, 5];\n   selectedValue: number = 0\n   \n \n-  constructor(private productsService:ProductsService) { }\n+  constructor(private productsService:ProductsService, private router : Router) { }\n \n   ngOnInit(): void {\n   }\n   countStar(star:any) {\n@@ -45,5 +46,14 @@\n     });\n     \n   }\n \n+  gotoEdit(){\n+    \n+    this.router.navigate(['form',]).finally(()=>{\n+      console.log('Finalize navigate')\n+    })\n+  \n+  \n+  }\n+\n }\n"
+                },
+                {
+                    "date": 1700121317319,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n   }\n \n   gotoEdit(){\n     \n-    this.router.navigate(['form',]).finally(()=>{\n+    this.router.navigate(['form',this._item.id]).finally(()=>{\n       console.log('Finalize navigate')\n     })\n   \n   \n"
+                },
+                {
+                    "date": 1700122965532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -48,9 +48,9 @@\n   }\n \n   gotoEdit(){\n     \n-    this.router.navigate(['form',this._item.id]).finally(()=>{\n+    this.router.navigate(['form',this._item.id,true],).finally(()=>{\n       console.log('Finalize navigate')\n     })\n   \n   \n"
+                },
+                {
+                    "date": 1700123087097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -46,14 +46,13 @@\n     });\n     \n   }\n \n-  gotoEdit(){\n+  gotoEditOrView(mode:string = 'view'){\n     \n-    this.router.navigate(['form',this._item.id,true],).finally(()=>{\n+    this.router.navigate(['form',this._item.id,mode == 'view'? false : true],).finally(()=>{\n       console.log('Finalize navigate')\n     })\n   \n-  \n   }\n \n }\n"
+                },
+                {
+                    "date": 1700124232813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { ProductsService } from 'src/app/services/products/products.service';\n-import { Component, Input, OnInit } from '@angular/core';\n+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\n import { Product } from 'src/app/models/product/product';\n import Swal from 'sweetalert2'\n import { Router } from '@angular/router';\n \n@@ -13,8 +13,9 @@\n   @Input() set Item(item:Product){\n     this._item = item;\n   \n   }\n+  @Output('onDeleted') onDeleted : EventEmitter<boolean> = new EventEmitter();\n   _item!: Product;\n \n   stars: number[] = [1, 2, 3, 4, 5];\n   selectedValue: number = 0\n@@ -40,8 +41,10 @@\n       if (result.isConfirmed) {\n         this.productsService.deleteProduct(this._item.id)?.subscribe(()=>{\n           Swal.fire(\"Saved!\", \"\", \"success\");\n \n+          this.onDeleted.emit(true)\n+\n         })\n       } \n     });\n     \n"
+                },
+                {
+                    "date": 1700202471258,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,9 @@\n \n   stars: number[] = [1, 2, 3, 4, 5];\n   selectedValue: number = 0\n   \n+  imagen_default : string = 'https://nayemdevs.com/wp-content/uploads/2020/03/default-product-image.png'\n \n   constructor(private productsService:ProductsService, private router : Router) { }\n \n   ngOnInit(): void {\n"
+                }
+            ],
+            "date": 1700093283137,
+            "name": "Commit-0",
+            "content": "import { Component, Input, OnInit } from '@angular/core';\nimport { Product } from 'src/app/models/product/product';\n\n@Component({\n  selector: 'app-product',\n  templateUrl: './product.component.html',\n  styleUrls: ['./product.component.scss']\n})\nexport class ProductComponent implements OnInit {\n  @Input() set Item(item:Product){\n    this._item = item;\n  \n  }\n  _item!: Product;\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n"
+        }
+    ]
+}

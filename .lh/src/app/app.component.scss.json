@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/app.component.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700091227115,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700091227115,
+            "name": "Commit-0",
+            "content": ".list{\n    width: 100%;\n}"
+        }
+    ]
+}

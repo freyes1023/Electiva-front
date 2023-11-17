@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/environments/environment.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700126713051,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700126713051,
+            "name": "Commit-0",
+            "content": "// This file can be replaced during build by using the `fileReplacements` array.\n// `ng build` replaces `environment.ts` with `environment.prod.ts`.\n// The list of file replacements can be found in `angular.json`.\n\nexport const environment = {\n  production: false,\n  // Your web app's Firebase configuration\n  firebaseConfig: {\n    apiKey: \"AIzaSyAdFPkOTLYqrtqoAAJyYl-Hck4-iMiYRbw\",\n    authDomain: \"front-electiva.firebaseapp.com\",\n    projectId: \"front-electiva\",\n    storageBucket: \"front-electiva.appspot.com\",\n    messagingSenderId: \"1000261725958\",\n    appId: \"1:1000261725958:web:9d5c64cac8f2817994b887\"\n  }\n}\n"
+        }
+    ]
+}

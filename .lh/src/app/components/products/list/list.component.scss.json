@@ -1,0 +1,94 @@
+{
+    "sourceFile": "src/app/components/products/list/list.component.scss",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 19,
+            "patches": [
+                {
+                    "date": 1700090644054,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700090821728,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,7 @@\n .list_product{\n     &--content{\n+        width: 100%;\n         display: grid;\n         grid-template-columns: repeat(3, 1fr);\n         gap: 10px;\n         grid-auto-rows: minmax(100px, auto);\n"
+                },
+                {
+                    "date": 1700091180454,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     &--content{\n         width: 100%;\n         display: grid;\n         grid-template-columns: repeat(3, 1fr);\n-        gap: 10px;\n+        gap: 2em;\n         grid-auto-rows: minmax(100px, auto);\n     }\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700091284789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n     &--content{\n         width: 100%;\n         display: grid;\n         grid-template-columns: repeat(3, 1fr);\n+        grid-auto-columns: 33.3%;\n         gap: 2em;\n         grid-auto-rows: minmax(100px, auto);\n     }\n \n"
+                },
+                {
+                    "date": 1700091297434,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .list_product{\n     &--content{\n         width: 100%;\n         display: grid;\n-        grid-template-columns: repeat(3, 1fr);\n+        // grid-template-columns: repeat(3, 1fr);\n         grid-auto-columns: 33.3%;\n         gap: 2em;\n         grid-auto-rows: minmax(100px, auto);\n     }\n"
+                },
+                {
+                    "date": 1700091317110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     &--content{\n         width: 100%;\n         display: grid;\n         // grid-template-columns: repeat(3, 1fr);\n-        grid-auto-columns: 33.3%;\n+        grid-auto-columns: auto;\n         gap: 2em;\n         grid-auto-rows: minmax(100px, auto);\n     }\n \n"
+                },
+                {
+                    "date": 1700091343764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,10 @@\n .list_product{\n     &--content{\n         width: 100%;\n         display: grid;\n-        // grid-template-columns: repeat(3, 1fr);\n-        grid-auto-columns: auto;\n+        grid-template-columns: repeat(3, 1fr);\n+       //  grid-auto-columns: auto;\n         gap: 2em;\n         grid-auto-rows: minmax(100px, auto);\n     }\n \n"
+                },
+                {
+                    "date": 1700091381525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,12 @@\n+.list_product{\n+    &--content{\n+        width: 100%;\n+        display: grid;\n+        grid-template-columns: repeat(3, 1fr);\n+        grid-auto-columns: 50px;\n+       //  grid-auto-columns: auto;\n+        gap: 2em;\n+        grid-auto-rows: minmax(100px, auto);\n+    }\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700100887777,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,15 +9,14 @@\n         grid-auto-rows: minmax(100px, auto);\n     }\n \n }\n-.list_product{\n-    &--content{\n-        width: 100%;\n-        display: grid;\n-        grid-template-columns: repeat(3, 1fr);\n-       //  grid-auto-columns: auto;\n-        gap: 2em;\n-        grid-auto-rows: minmax(100px, auto);\n+\n+.card{\n+    &-add{\n+        &__img{\n+            object-fit: contain;\n+            aspect-ratio: 1/1;\n+            width: 100%;\n+        }\n     }\n-\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700100916886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,7 +16,8 @@\n         &__img{\n             object-fit: contain;\n             aspect-ratio: 1/1;\n             width: 100%;\n+            opacity: 0.2;\n         }\n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700101148896,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,6 +18,10 @@\n             aspect-ratio: 1/1;\n             width: 100%;\n             opacity: 0.2;\n         }\n+        &__button{\n+            min-width: 288px;\n+        }\n+        \n     }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700124554854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n             object-fit: contain;\n             aspect-ratio: 1/1;\n             width: 100%;\n             opacity: 0.2;\n+            max-width: 272px;\n         }\n         &__button{\n             min-width: 288px;\n         }\n"
+                },
+                {
+                    "date": 1700202500880,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .list_product{\n     &--content{\n         width: 100%;\n         display: grid;\n-        grid-template-columns: repeat(3, 1fr);\n+        grid-template-columns: repeat(4, 1fr);\n         grid-auto-columns: 50px;\n        //  grid-auto-columns: auto;\n         gap: 2em;\n         grid-auto-rows: minmax(100px, auto);\n"
+                },
+                {
+                    "date": 1700202597097,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .list_product{\n     &--content{\n         width: 100%;\n         display: grid;\n-        grid-template-columns: repeat(4, 1fr);\n+        grid-template-columns: repeat(auto-fit, 1fr);\n         grid-auto-columns: 50px;\n        //  grid-auto-columns: auto;\n         gap: 2em;\n         grid-auto-rows: minmax(100px, auto);\n"
+                },
+                {
+                    "date": 1700202628120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .list_product{\n     &--content{\n         width: 100%;\n         display: grid;\n-        grid-template-columns: repeat(auto-fit, 1fr);\n+        grid-template-columns: repeat(auto-fill, 1fr);\n         grid-auto-columns: 50px;\n        //  grid-auto-columns: auto;\n         gap: 2em;\n         grid-auto-rows: minmax(100px, auto);\n"
+                },
+                {
+                    "date": 1700202883017,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .list_product{\n     &--content{\n         width: 100%;\n         display: grid;\n-        grid-template-columns: repeat(auto-fill, 1fr);\n+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n         grid-auto-columns: 50px;\n        //  grid-auto-columns: auto;\n         gap: 2em;\n         grid-auto-rows: minmax(100px, auto);\n"
+                },
+                {
+                    "date": 1700202900992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .list_product{\n     &--content{\n         width: 100%;\n         display: grid;\n-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));\n+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));\n         grid-auto-columns: 50px;\n        //  grid-auto-columns: auto;\n         gap: 2em;\n         grid-auto-rows: minmax(100px, auto);\n"
+                },
+                {
+                    "date": 1700202919646,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,9 @@\n .list_product{\n     &--content{\n         width: 100%;\n         display: grid;\n-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));\n+        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));\n         grid-auto-columns: 50px;\n        //  grid-auto-columns: auto;\n         gap: 2em;\n         grid-auto-rows: minmax(100px, auto);\n"
+                },
+                {
+                    "date": 1700202984175,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n         grid-auto-columns: 50px;\n        //  grid-auto-columns: auto;\n         gap: 2em;\n         grid-auto-rows: minmax(100px, auto);\n+        justify-items: center;\n     }\n \n }\n \n"
+                },
+                {
+                    "date": 1700202990298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n         grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));\n         grid-auto-columns: 50px;\n        //  grid-auto-columns: auto;\n         gap: 2em;\n-        grid-auto-rows: minmax(100px, auto);\n+       //  grid-auto-rows: minmax(100px, auto);\n         justify-items: center;\n     }\n \n }\n"
+                }
+            ],
+            "date": 1700090644054,
+            "name": "Commit-0",
+            "content": ".list_product{\n    &--content{\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 10px;\n        grid-auto-rows: minmax(100px, auto);\n    }\n\n}"
+        }
+    ]
+}

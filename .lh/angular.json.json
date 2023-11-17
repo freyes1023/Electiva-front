@@ -1,0 +1,26 @@
+{
+    "sourceFile": "angular.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1700093986621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700094075015,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,9 @@\n               \"src/assets\"\n             ],\n             \"styles\": [\n               \"src/styles.scss\",\n-              \"../node_modules/font-awesome/css/font-awesome.css\"\n+              \"./node_modules/font-awesome/css/font-awesome.css\"\n             ],\n             \"scripts\": []\n           },\n           \"configurations\": {\n"
+                },
+                {
+                    "date": 1700116493805,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -28,9 +28,10 @@\n               \"src/assets\"\n             ],\n             \"styles\": [\n               \"src/styles.scss\",\n-              \"./node_modules/font-awesome/css/font-awesome.css\"\n+              \"./node_modules/font-awesome/css/font-awesome.css\",\n+              \"node_modules/bootstrap/dist/css/bootstrap.min.css\",\n             ],\n             \"scripts\": []\n           },\n           \"configurations\": {\n"
+                }
+            ],
+            "date": 1700093986620,
+            "name": "Commit-0",
+            "content": "{\n  \"$schema\": \"./node_modules/@angular/cli/lib/config/schema.json\",\n  \"version\": 1,\n  \"newProjectRoot\": \"projects\",\n  \"projects\": {\n    \"Electiva-front\": {\n      \"projectType\": \"application\",\n      \"schematics\": {\n        \"@schematics/angular:component\": {\n          \"style\": \"scss\"\n        }\n      },\n      \"root\": \"\",\n      \"sourceRoot\": \"src\",\n      \"prefix\": \"app\",\n      \"architect\": {\n        \"build\": {\n          \"builder\": \"@angular-devkit/build-angular:browser\",\n          \"options\": {\n            \"outputPath\": \"dist/electiva-front\",\n            \"index\": \"src/index.html\",\n            \"main\": \"src/main.ts\",\n            \"polyfills\": \"src/polyfills.ts\",\n            \"tsConfig\": \"tsconfig.app.json\",\n            \"inlineStyleLanguage\": \"scss\",\n            \"assets\": [\n              \"src/favicon.ico\",\n              \"src/assets\"\n            ],\n            \"styles\": [\n              \"src/styles.scss\",\n              \"../node_modules/font-awesome/css/font-awesome.css\"\n            ],\n            \"scripts\": []\n          },\n          \"configurations\": {\n            \"production\": {\n              \"budgets\": [\n                {\n                  \"type\": \"initial\",\n                  \"maximumWarning\": \"500kb\",\n                  \"maximumError\": \"1mb\"\n                },\n                {\n                  \"type\": \"anyComponentStyle\",\n                  \"maximumWarning\": \"2kb\",\n                  \"maximumError\": \"4kb\"\n                }\n              ],\n              \"fileReplacements\": [\n                {\n                  \"replace\": \"src/environments/environment.ts\",\n                  \"with\": \"src/environments/environment.prod.ts\"\n                }\n              ],\n              \"outputHashing\": \"all\"\n            },\n            \"development\": {\n              \"buildOptimizer\": false,\n              \"optimization\": false,\n              \"vendorChunk\": true,\n              \"extractLicenses\": false,\n              \"sourceMap\": true,\n              \"namedChunks\": true\n            }\n          },\n          \"defaultConfiguration\": \"production\"\n        },\n        \"serve\": {\n          \"builder\": \"@angular-devkit/build-angular:dev-server\",\n          \"configurations\": {\n            \"production\": {\n              \"browserTarget\": \"Electiva-front:build:production\"\n            },\n            \"development\": {\n              \"browserTarget\": \"Electiva-front:build:development\"\n            }\n          },\n          \"defaultConfiguration\": \"development\"\n        },\n        \"extract-i18n\": {\n          \"builder\": \"@angular-devkit/build-angular:extract-i18n\",\n          \"options\": {\n            \"browserTarget\": \"Electiva-front:build\"\n          }\n        },\n        \"test\": {\n          \"builder\": \"@angular-devkit/build-angular:karma\",\n          \"options\": {\n            \"main\": \"src/test.ts\",\n            \"polyfills\": \"src/polyfills.ts\",\n            \"tsConfig\": \"tsconfig.spec.json\",\n            \"karmaConfig\": \"karma.conf.js\",\n            \"inlineStyleLanguage\": \"scss\",\n            \"assets\": [\n              \"src/favicon.ico\",\n              \"src/assets\"\n            ],\n            \"styles\": [\n              \"src/styles.scss\"\n            ],\n            \"scripts\": []\n          }\n        }\n      }\n    }\n  }\n}\n"
+        }
+    ]
+}

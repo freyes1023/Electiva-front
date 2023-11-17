@@ -1,0 +1,14 @@
+<section class="list_product--content">
+    <div *ngFor="let item of products">
+        <app-product [Item] = "item" (onDeleted)="deleteItem($event)"></app-product>
+    </div>
+    <div>
+        <div class="card-add" (click)="gotoRoute('form')">
+            <div class="card-add__content">
+              <button type="button" name="add" id="add" class="card-add__button">
+                <img class="card-add__img" src="https://cdn.pixabay.com/photo/2017/11/10/05/24/add-2935429_960_720.png" alt="">
+              </button>
+            </div>
+        </div>
+    </div>
+</section>

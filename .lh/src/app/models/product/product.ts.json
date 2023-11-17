@@ -1,0 +1,30 @@
+{
+    "sourceFile": "src/app/models/product/product.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1700091905180,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700117599634,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,38 +1,21 @@\n export interface Product {\n-    id: number;\n+    id?: number;\n     name: string;\n     price: number;\n     description: string;\n-    image: string;\n-    category: string;\n+    image?: string;\n     rating: number;\n-    quantity: number;\n-    isFavourite: boolean;\n-    isAvailable: boolean;\n-    createdAt: string;\n-    updatedAt: string;\n-    deletedAt: string;\n-    userId: number;\n-    brandId: number;\n-    sizeId: number;\n-    colorId: number;\n+    category?: string;\n+    quantity?: number;\n+    isAvailable?: boolean;\n+   \n+    userId?: number;\n+    brandId?: number;\n+    sizeId?: number;\n+    colorId?: number;\n     categoryId: number;\n-    subCategoryId: number;\n-    discountId: number;\n-    taxId: number;\n-    tagId: number;\n-    variantId: number;\n-    variantName: string;\n-    variantPrice: number;\n-    variantImage: string;\n-    variantQuantity: number;\n-    variantIsFavourite: boolean;\n-    variantIsAvailable: boolean;\n-    variantCreatedAt: string;\n-    variantUpdatedAt: string;\n-    variantDeletedAt: string;\n-    variantUserId: number;\n-    variantBrandId: number;\n-    variantSizeId: number;\n-    variantColorId: number;\n+    subCategoryId?: number;\n+    discountId?: number;\n+    isFavourite?: boolean;\n+\n }\n"
+                },
+                {
+                    "date": 1700117644791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     userId?: number;\n     brandId?: number;\n     sizeId?: number;\n     colorId?: number;\n-    categoryId: number;\n+    categoryId?: number;\n     subCategoryId?: number;\n     discountId?: number;\n     isFavourite?: boolean;\n \n"
+                },
+                {
+                    "date": 1700118975407,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     id?: number;\n     name: string;\n     price: number;\n     description: string;\n-    image?: string;\n+    image?: string | ArrayBuffer | null;\n     rating: number;\n     category?: string;\n     quantity?: number;\n     isAvailable?: boolean;\n"
+                }
+            ],
+            "date": 1700091905180,
+            "name": "Commit-0",
+            "content": "export interface Product {\n    id: number;\n    name: string;\n    price: number;\n    description: string;\n    image: string;\n    category: string;\n    rating: number;\n    quantity: number;\n    isFavourite: boolean;\n    isAvailable: boolean;\n    createdAt: string;\n    updatedAt: string;\n    deletedAt: string;\n    userId: number;\n    brandId: number;\n    sizeId: number;\n    colorId: number;\n    categoryId: number;\n    subCategoryId: number;\n    discountId: number;\n    taxId: number;\n    tagId: number;\n    variantId: number;\n    variantName: string;\n    variantPrice: number;\n    variantImage: string;\n    variantQuantity: number;\n    variantIsFavourite: boolean;\n    variantIsAvailable: boolean;\n    variantCreatedAt: string;\n    variantUpdatedAt: string;\n    variantDeletedAt: string;\n    variantUserId: number;\n    variantBrandId: number;\n    variantSizeId: number;\n    variantColorId: number;\n}\n"
+        }
+    ]
+}

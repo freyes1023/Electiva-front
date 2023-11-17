@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/app/components/products/list/list.component.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1700092816000,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700113258903,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,20 +1,25 @@\n import { Product } from 'src/app/models/product/product';\n import { ProductsService } from './../../../services/products/products.service';\n import { Component, OnInit } from '@angular/core';\n+import { Router } from '@angular/router';\n \n @Component({\n   selector: 'app-list',\n   templateUrl: './list.component.html',\n   styleUrls: ['./list.component.scss']\n })\n export class ListComponent implements OnInit {\n   products : Product[] = []\n-  constructor(private productsService: ProductsService) { }\n+  constructor(private productsService: ProductsService, private router: Router) { }\n \n   ngOnInit(): void {\n     this.productsService.getProducts().subscribe((products)=>{\n       this.products = products;\n     })\n   }\n \n+  gotoRoute(Route:string){\n+    this.router.navigate([Route]);\n+  }\n+\n }\n"
+                },
+                {
+                    "date": 1700113340926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n     })\n   }\n \n   gotoRoute(Route:string){\n+    console.log(Route)\n     this.router.navigate([Route]);\n   }\n \n }\n"
+                },
+                {
+                    "date": 1700115895183,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,8 +19,10 @@\n   }\n \n   gotoRoute(Route:string){\n     console.log(Route)\n-    this.router.navigate([Route]);\n+    this.router.navigate([Route]).finally(()=>{\n+      console.log('Finalize navigate')\n+    })\n   }\n \n }\n"
+                },
+                {
+                    "date": 1700123521270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,9 @@\n       this.products = products;\n     })\n   }\n \n+\n   gotoRoute(Route:string){\n     console.log(Route)\n     this.router.navigate([Route]).finally(()=>{\n       console.log('Finalize navigate')\n"
+                },
+                {
+                    "date": 1700124360934,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,14 +12,23 @@\n   products : Product[] = []\n   constructor(private productsService: ProductsService, private router: Router) { }\n \n   ngOnInit(): void {\n+   this.getProduct();\n+  }\n+\n+  getProduct(){\n     this.productsService.getProducts().subscribe((products)=>{\n       this.products = products;\n     })\n   }\n \n-\n+  deleteItem($event:any){\n+    console.log($event)\n+    if ($event) {\n+      this.getProduct();\n+    }\n+  }\n   gotoRoute(Route:string){\n     console.log(Route)\n     this.router.navigate([Route]).finally(()=>{\n       console.log('Finalize navigate')\n"
+                }
+            ],
+            "date": 1700092816000,
+            "name": "Commit-0",
+            "content": "import { Product } from 'src/app/models/product/product';\nimport { ProductsService } from './../../../services/products/products.service';\nimport { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-list',\n  templateUrl: './list.component.html',\n  styleUrls: ['./list.component.scss']\n})\nexport class ListComponent implements OnInit {\n  products : Product[] = []\n  constructor(private productsService: ProductsService) { }\n\n  ngOnInit(): void {\n    this.productsService.getProducts().subscribe((products)=>{\n      this.products = products;\n    })\n  }\n\n}\n"
+        }
+    ]
+}

@@ -1,0 +1,66 @@
+{
+    "sourceFile": "src/app/components/products/list/list.component.html",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 12,
+            "patches": [
+                {
+                    "date": 1700088969936,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700090645866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-<section>\n+<section class=\"list_product--content\">\n     <div *ngFor=\"let item of [0,0,0,0,0,0,0,0,0]\">\n         <app-product></app-product>\n     </div>\n </section>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700092993060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <section class=\"list_product--content\">\n-    <div *ngFor=\"let item of [0,0,0,0,0,0,0,0,0]\">\n+    <div *ngFor=\"let item of products\">\n         <app-product></app-product>\n     </div>\n </section>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700093353373,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n <section class=\"list_product--content\">\n     <div *ngFor=\"let item of products\">\n-        <app-product></app-product>\n+        <app-product [Item] = \"item\"></app-product>\n     </div>\n </section>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700100585176,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,14 @@\n <section class=\"list_product--content\">\n     <div *ngFor=\"let item of products\">\n         <app-product [Item] = \"item\"></app-product>\n     </div>\n+    <div>\n+        <div class=\"card-add\">\n+            <div class=\"d-grid gap-2\">\n+              <button type=\"button\" name=\"add\" id=\"add\" class=\"btn btn-primary\">\n+                <img src=\"https://cdn.pixabay.com/photo/2017/11/10/05/24/add-2935429_960_720.png\" alt=\"\">\n+              </button>\n+            </div>\n+        </div>\n+    </div>\n </section>\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700100660468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,11 @@\n-<section class=\"list_product--content\">\n+<section class=\"d-grid gap-2\"><!-- list_product--content -->\n     <div *ngFor=\"let item of products\">\n         <app-product [Item] = \"item\"></app-product>\n     </div>\n     <div>\n         <div class=\"card-add\">\n-            <div class=\"d-grid gap-2\">\n+            <div >\n               <button type=\"button\" name=\"add\" id=\"add\" class=\"btn btn-primary\">\n                 <img src=\"https://cdn.pixabay.com/photo/2017/11/10/05/24/add-2935429_960_720.png\" alt=\"\">\n               </button>\n             </div>\n"
+                },
+                {
+                    "date": 1700100754917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,13 @@\n-<section class=\"d-grid gap-2\"><!-- list_product--content -->\n+<section class=\"list_product--content\">\n     <div *ngFor=\"let item of products\">\n         <app-product [Item] = \"item\"></app-product>\n     </div>\n     <div>\n         <div class=\"card-add\">\n-            <div >\n-              <button type=\"button\" name=\"add\" id=\"add\" class=\"btn btn-primary\">\n-                <img src=\"https://cdn.pixabay.com/photo/2017/11/10/05/24/add-2935429_960_720.png\" alt=\"\">\n+            <div class=\"card-add__content\">\n+              <button type=\"button\" name=\"add\" id=\"add\" class=\"btn btn-primary card-add__button\">\n+                <img class=\"card-add__img\" src=\"https://cdn.pixabay.com/photo/2017/11/10/05/24/add-2935429_960_720.png\" alt=\"\">\n               </button>\n             </div>\n         </div>\n     </div>\n"
+                },
+                {
+                    "date": 1700112082772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     <div *ngFor=\"let item of products\">\n         <app-product [Item] = \"item\"></app-product>\n     </div>\n     <div>\n-        <div class=\"card-add\">\n+        <div class=\"card-add\" routerLink=\"/form\">\n             <div class=\"card-add__content\">\n               <button type=\"button\" name=\"add\" id=\"add\" class=\"btn btn-primary card-add__button\">\n                 <img class=\"card-add__img\" src=\"https://cdn.pixabay.com/photo/2017/11/10/05/24/add-2935429_960_720.png\" alt=\"\">\n               </button>\n"
+                },
+                {
+                    "date": 1700113279557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n     <div *ngFor=\"let item of products\">\n         <app-product [Item] = \"item\"></app-product>\n     </div>\n     <div>\n-        <div class=\"card-add\" routerLink=\"/form\">\n+        <div class=\"card-add\" (click)=\"gotoRoute('form')\">\n             <div class=\"card-add__content\">\n               <button type=\"button\" name=\"add\" id=\"add\" class=\"btn btn-primary card-add__button\">\n                 <img class=\"card-add__img\" src=\"https://cdn.pixabay.com/photo/2017/11/10/05/24/add-2935429_960_720.png\" alt=\"\">\n               </button>\n"
+                },
+                {
+                    "date": 1700116511746,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     </div>\n     <div>\n         <div class=\"card-add\" (click)=\"gotoRoute('form')\">\n             <div class=\"card-add__content\">\n-              <button type=\"button\" name=\"add\" id=\"add\" class=\"btn btn-primary card-add__button\">\n+              <button type=\"button\" name=\"add\" id=\"add\" class=\" card-add__button\">\n                 <img class=\"card-add__img\" src=\"https://cdn.pixabay.com/photo/2017/11/10/05/24/add-2935429_960_720.png\" alt=\"\">\n               </button>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1700116767698,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n     </div>\n     <div>\n         <div class=\"card-add\" (click)=\"gotoRoute('form')\">\n             <div class=\"card-add__content\">\n-              <button type=\"button\" name=\"add\" id=\"add\" class=\" card-add__button\">\n+              <button type=\"button\" name=\"add\" id=\"add\" class=\"card-add__button\">\n                 <img class=\"card-add__img\" src=\"https://cdn.pixabay.com/photo/2017/11/10/05/24/add-2935429_960_720.png\" alt=\"\">\n               </button>\n             </div>\n         </div>\n"
+                },
+                {
+                    "date": 1700124274705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <section class=\"list_product--content\">\n     <div *ngFor=\"let item of products\">\n-        <app-product [Item] = \"item\"></app-product>\n+        <app-product [Item] = \"item\" (onDelete)=\"deleteItem($event)\"></app-product>\n     </div>\n     <div>\n         <div class=\"card-add\" (click)=\"gotoRoute('form')\">\n             <div class=\"card-add__content\">\n"
+                },
+                {
+                    "date": 1700124385858,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,7 +1,7 @@\n <section class=\"list_product--content\">\n     <div *ngFor=\"let item of products\">\n-        <app-product [Item] = \"item\" (onDelete)=\"deleteItem($event)\"></app-product>\n+        <app-product [Item] = \"item\" (onDeleted)=\"deleteItem($event)\"></app-product>\n     </div>\n     <div>\n         <div class=\"card-add\" (click)=\"gotoRoute('form')\">\n             <div class=\"card-add__content\">\n"
+                }
+            ],
+            "date": 1700088969935,
+            "name": "Commit-0",
+            "content": "<section>\n    <div *ngFor=\"let item of [0,0,0,0,0,0,0,0,0]\">\n        <app-product></app-product>\n    </div>\n</section>"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "src/app/pages/pages.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1700110943584,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700111913655,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n import { NgModule } from '@angular/core';\n import { CommonModule } from '@angular/common';\n import { ProductsComponent } from './products/products.component';\n import { AppRoutingModule } from '../app-routing.module';\n+import { RouterModule } from '@angular/router';\n \n \n \n @NgModule({\n@@ -10,8 +11,9 @@\n     ProductsComponent\n   ],\n   imports: [\n     CommonModule,\n-    AppRoutingModule\n+    AppRoutingModule,\n+    RouterModule\n   ]\n })\n export class PagesModule { }\n"
+                },
+                {
+                    "date": 1700114212406,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,8 +2,9 @@\n import { CommonModule } from '@angular/common';\n import { ProductsComponent } from './products/products.component';\n import { AppRoutingModule } from '../app-routing.module';\n import { RouterModule } from '@angular/router';\n+import { ProductsModule } from '../components/products/products.module';\n \n \n \n @NgModule({\n@@ -12,8 +13,9 @@\n   ],\n   imports: [\n     CommonModule,\n     AppRoutingModule,\n-    RouterModule\n+    RouterModule,\n+    ProductsModule,\n   ]\n })\n export class PagesModule { }\n"
+                },
+                {
+                    "date": 1700115638720,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,14 @@\n+import { ProductsModule } from './../components/products/products.module';\n import { NgModule } from '@angular/core';\n import { CommonModule } from '@angular/common';\n import { ProductsComponent } from './products/products.component';\n import { AppRoutingModule } from '../app-routing.module';\n import { RouterModule } from '@angular/router';\n-import { ProductsModule } from '../components/products/products.module';\n \n \n \n+\n @NgModule({\n   declarations: [\n     ProductsComponent\n   ],\n"
+                },
+                {
+                    "date": 1700115664765,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n import { ProductsModule } from './../components/products/products.module';\n-import { NgModule } from '@angular/core';\n+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';\n import { CommonModule } from '@angular/common';\n import { ProductsComponent } from './products/products.component';\n import { AppRoutingModule } from '../app-routing.module';\n import { RouterModule } from '@angular/router';\n@@ -16,7 +16,9 @@\n     CommonModule,\n     AppRoutingModule,\n     RouterModule,\n     ProductsModule,\n-  ]\n+  ],\n+  schemas:[CUSTOM_ELEMENTS_SCHEMA]\n+\n })\n export class PagesModule { }\n"
+                },
+                {
+                    "date": 1700115732574,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,8 @@\n     CommonModule,\n     AppRoutingModule,\n     RouterModule,\n     ProductsModule,\n-  ],\n-  schemas:[CUSTOM_ELEMENTS_SCHEMA]\n+  ]\n \n })\n export class PagesModule { }\n"
+                }
+            ],
+            "date": 1700110943584,
+            "name": "Commit-0",
+            "content": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { ProductsComponent } from './products/products.component';\nimport { AppRoutingModule } from '../app-routing.module';\n\n\n\n@NgModule({\n  declarations: [\n    ProductsComponent\n  ],\n  imports: [\n    CommonModule,\n    AppRoutingModule\n  ]\n})\nexport class PagesModule { }\n"
+        }
+    ]
+}

@@ -3,14 +3,14 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
-};
-
-/*
- * For easier debugging in development mode, you can import the following file
- * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
- *
- * This import should be commented out in production mode because it will have a negative impact
- * on performance if an error is thrown.
- */
-// import 'zone.js/plugins/zone-error';  // Included with Angular CLI.
+  production: false,
+  // Your web app's Firebase configuration
+  firebaseConfig: {
+    apiKey: "AIzaSyAdFPkOTLYqrtqoAAJyYl-Hck4-iMiYRbw",
+    authDomain: "front-electiva.firebaseapp.com",
+    projectId: "front-electiva",
+    storageBucket: "front-electiva.appspot.com",
+    messagingSenderId: "1000261725958",
+    appId: "1:1000261725958:web:9d5c64cac8f2817994b887"
+  }
+}

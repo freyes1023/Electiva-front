@@ -1,0 +1,46 @@
+<div class="container">
+    <form *ngIf="Product">
+        <div class="row">
+            <div class="col-8 form-group">
+                <label for="tittle" class="col-form-label">Title</label>
+                <input type="text" id="tittle" name="name" [(ngModel)]="Product.name" [readonly]="mode == 'view'" required class="form-control"/>
+            </div>
+            <div class="col form-group">
+                <label for="price" class="col-form-label">Price</label>
+                <input type="number" id="price" name="price"  min="0" [(ngModel)]="Product.price" [readonly]="mode == 'view'"  required class="form-control"/> 
+            </div>
+        </div>
+        
+        <div class="row align-items-center justify-content-start">
+            <div class="col-3 form-group">
+                <label for="category" class="col-form-label">Category</label>
+                <select id="category"  name="category" required [(ngModel)]="Product.categoryId" [disabled]="mode == 'view'"  class="form-control" >
+                <option value="">Select Category</option>
+                <option value="1">Juegos</option>
+                <option value="2">aseo</option>
+                <option value="3">Educacion</option>
+                <option value="4">alimentacion</option>
+                </select>
+            </div>
+            <div class="col-2 mt-4" *ngIf="Product.image">
+                <img [src]="Product.image" class="img-thumbnail rounded mx-auto d-block card-img" alt="">
+                <span *ngIf="viewAlertImg" class="text-danger mt-2"> La imagen se modificara al Guardar los cambios *</span>
+            </div>
+        
+            <div class="col form-group" >
+    
+                <label for="image" class="col-form-label">Image (Url)</label>
+                <input  #upload type="file" id="image" name="image" (change)="setImage(upload)" [disabled]="mode == 'view'" required class="form-control"/>
+            </div>
+            
+        </div>
+    
+        <div class="form-group">
+                <label for="description" class="col-form-label">Description</label>
+                <textarea type="text" id="description" name="description" [(ngModel)]="Product.description" [readonly]="mode == 'view'"  required class="form-control"></textarea>
+        </div>  
+        
+        <hr/>
+        <button *ngIf="mode != 'view'" class="btn btn-primary" type="submit" (click)="save()">Save</button>
+    </form>
+</div>

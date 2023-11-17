@@ -1,0 +1,54 @@
+{
+    "sourceFile": "src/app/services/products/products.service.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1700092006297,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700092802578,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,17 +1,18 @@\n \n import { Injectable } from '@angular/core';\n import { HttpClient } from '@angular/common/http';\n import { Product } from 'src/app/models/product/product';\n+import { Observable } from 'rxjs';\n \n @Injectable({providedIn: 'root'})\n export class ProductsService {\n   baseUrl = 'https://electivaback-n4jsneydta-ue.a.run.app';\n   constructor(private httpClient: HttpClient) { }\n \n \n-  getProducts() { \n-    return this.httpClient.get(this.baseUrl);\n+  getProducts():Observable<Product[]>  { \n+    return this.httpClient.get(this.baseUrl) as Observable<Product[]>;\n   }\n \n   getProduct(id:string) {\n     return this.httpClient.get(this.baseUrl + id);\n"
+                },
+                {
+                    "date": 1700092905125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n import { Observable } from 'rxjs';\n \n @Injectable({providedIn: 'root'})\n export class ProductsService {\n-  baseUrl = 'https://electivaback-n4jsneydta-ue.a.run.app';\n+  baseUrl = 'https://electivaback-n4jsneydta-ue.a.run.app/products';\n   constructor(private httpClient: HttpClient) { }\n \n \n   getProducts():Observable<Product[]>  { \n"
+                },
+                {
+                    "date": 1700092946875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return this.httpClient.get(this.baseUrl) as Observable<Product[]>;\n   }\n \n   getProduct(id:string) {\n-    return this.httpClient.get(this.baseUrl + id);\n+    return this.httpClient.get(this.baseUrl + `/${id}`);\n   }\n \n   addProduct(product:Product) {\n     return this.httpClient.post(this.baseUrl, product);\n@@ -25,9 +25,9 @@\n   updateProduct(product:Product) {\n     return this.httpClient.put(this.baseUrl, product);\n   }\n   deleteProduct(id:string) {\n-    return this.httpClient.delete(this.baseUrl+id);\n+    return this.httpClient.delete(this.baseUrl+ `/${id}`);\n   }\n \n   \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700120471908,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n \n   updateProduct(product:Product) {\n     return this.httpClient.put(this.baseUrl, product);\n   }\n-  deleteProduct(id:string) {\n+  deleteProduct(id:number) {\n     return this.httpClient.delete(this.baseUrl+ `/${id}`);\n   }\n \n   \n"
+                },
+                {
+                    "date": 1700120539704,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,12 @@\n \n   updateProduct(product:Product) {\n     return this.httpClient.put(this.baseUrl, product);\n   }\n-  deleteProduct(id:number) {\n+  deleteProduct(id?:number) {\n+if (!id) {\n+  return\n+}\n     return this.httpClient.delete(this.baseUrl+ `/${id}`);\n   }\n \n   \n"
+                },
+                {
+                    "date": 1700121690111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n   getProducts():Observable<Product[]>  { \n     return this.httpClient.get(this.baseUrl) as Observable<Product[]>;\n   }\n \n-  getProduct(id:string) {\n+  getProduct(id:string):Observable<Product> {\n     return this.httpClient.get(this.baseUrl + `/${id}`);\n   }\n \n   addProduct(product:Product) {\n"
+                },
+                {
+                    "date": 1700121747991,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     return this.httpClient.get(this.baseUrl) as Observable<Product[]>;\n   }\n \n   getProduct(id:string):Observable<Product> {\n-    return this.httpClient.get(this.baseUrl + `/${id}`);\n+    return this.httpClient.get(this.baseUrl + `/${id}`) as Observable<Product>;\n   }\n \n   addProduct(product:Product) {\n     return this.httpClient.post(this.baseUrl, product);\n"
+                },
+                {
+                    "date": 1700121757652,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,34 +3,34 @@\n import { HttpClient } from '@angular/common/http';\n import { Product } from 'src/app/models/product/product';\n import { Observable } from 'rxjs';\n \n-@Injectable({providedIn: 'root'})\n+@Injectable({ providedIn: 'root' })\n export class ProductsService {\n   baseUrl = 'https://electivaback-n4jsneydta-ue.a.run.app/products';\n   constructor(private httpClient: HttpClient) { }\n \n \n-  getProducts():Observable<Product[]>  { \n+  getProducts(): Observable<Product[]> {\n     return this.httpClient.get(this.baseUrl) as Observable<Product[]>;\n   }\n \n-  getProduct(id:string):Observable<Product> {\n+  getProduct(id: string): Observable<Product> {\n     return this.httpClient.get(this.baseUrl + `/${id}`) as Observable<Product>;\n   }\n \n-  addProduct(product:Product) {\n+  addProduct(product: Product) {\n     return this.httpClient.post(this.baseUrl, product);\n   }\n \n-  updateProduct(product:Product) {\n+  updateProduct(product: Product) {\n     return this.httpClient.put(this.baseUrl, product);\n   }\n-  deleteProduct(id?:number) {\n-if (!id) {\n-  return\n-}\n-    return this.httpClient.delete(this.baseUrl+ `/${id}`);\n+  deleteProduct(id?: number) {\n+    if (!id) {\n+      return\n+    }\n+    return this.httpClient.delete(this.baseUrl + `/${id}`);\n   }\n \n-  \n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1700122414848,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,10 +21,10 @@\n   addProduct(product: Product) {\n     return this.httpClient.post(this.baseUrl, product);\n   }\n \n-  updateProduct(product: Product) {\n-    return this.httpClient.put(this.baseUrl, product);\n+  updateProduct(product: Product,id:string) {\n+    return this.httpClient.put(this.baseUrl+ `/${id}`, product);\n   }\n   deleteProduct(id?: number) {\n     if (!id) {\n       return\n"
+                }
+            ],
+            "date": 1700092006297,
+            "name": "Commit-0",
+            "content": "\nimport { Injectable } from '@angular/core';\nimport { HttpClient } from '@angular/common/http';\nimport { Product } from 'src/app/models/product/product';\n\n@Injectable({providedIn: 'root'})\nexport class ProductsService {\n  baseUrl = 'https://electivaback-n4jsneydta-ue.a.run.app';\n  constructor(private httpClient: HttpClient) { }\n\n\n  getProducts() { \n    return this.httpClient.get(this.baseUrl);\n  }\n\n  getProduct(id:string) {\n    return this.httpClient.get(this.baseUrl + id);\n  }\n\n  addProduct(product:Product) {\n    return this.httpClient.post(this.baseUrl, product);\n  }\n\n  updateProduct(product:Product) {\n    return this.httpClient.put(this.baseUrl, product);\n  }\n  deleteProduct(id:string) {\n    return this.httpClient.delete(this.baseUrl+id);\n  }\n\n  \n}"
+        }
+    ]
+}

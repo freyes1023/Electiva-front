@@ -1,0 +1,58 @@
+{
+    "sourceFile": "src/app/app-routing.module.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1700101716442,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1700101792256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import { ProductsComponent } from './pages/products/products.component';\n \n const routes: Routes = [\n   {\n-    path: '/',\n+    path: '/products',\n     component:ProductsComponent}\n ];\n \n @NgModule({\n"
+                },
+                {
+                    "date": 1700110945633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,13 +1,8 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n-import { ProductsComponent } from './pages/products/products.component';\n \n-const routes: Routes = [\n-  {\n-    path: '/products',\n-    component:ProductsComponent}\n-];\n+const routes: Routes = [];\n \n @NgModule({\n   imports: [RouterModule.forRoot(routes)],\n   exports: [RouterModule]\n"
+                },
+                {
+                    "date": 1700111741906,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,11 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n \n-const routes: Routes = [];\n+const routes: Routes = [\n+    { path: '', redirectTo: '/home', pathMatch: 'full' },\n+    { path: '**', redirectTo: '/home' }\n+];\n \n @NgModule({\n   imports: [RouterModule.forRoot(routes)],\n   exports: [RouterModule]\n"
+                },
+                {
+                    "date": 1700111810725,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,10 +1,12 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n+import { ProductsComponent } from './pages/products/products.component';\n \n const routes: Routes = [\n-    { path: '', redirectTo: '/home', pathMatch: 'full' },\n-    { path: '**', redirectTo: '/home' }\n+    { path: '', redirectTo: '/produt', pathMatch: 'full' },\n+    { path: '**', redirectTo: '/home' },\n+    { path: 'home',component:ProductsComponent },\n ];\n \n @NgModule({\n   imports: [RouterModule.forRoot(routes)],\n"
+                },
+                {
+                    "date": 1700111823964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n import { RouterModule, Routes } from '@angular/router';\n import { ProductsComponent } from './pages/products/products.component';\n \n const routes: Routes = [\n-    { path: '', redirectTo: '/produt', pathMatch: 'full' },\n+    { path: '', redirectTo: '/home', pathMatch: 'full' },\n     { path: '**', redirectTo: '/home' },\n     { path: 'home',component:ProductsComponent },\n ];\n \n"
+                },
+                {
+                    "date": 1700112432709,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,14 @@\n import { NgModule } from '@angular/core';\n import { RouterModule, Routes } from '@angular/router';\n import { ProductsComponent } from './pages/products/products.component';\n+import { FormComponent } from './components/products/form/form.component';\n \n const routes: Routes = [\n     { path: '', redirectTo: '/home', pathMatch: 'full' },\n     { path: '**', redirectTo: '/home' },\n     { path: 'home',component:ProductsComponent },\n+    { path: 'form',component:FormComponent },\n ];\n \n @NgModule({\n   imports: [RouterModule.forRoot(routes)],\n"
+                },
+                {
+                    "date": 1700115920559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n import { FormComponent } from './components/products/form/form.component';\n \n const routes: Routes = [\n     { path: '', redirectTo: '/home', pathMatch: 'full' },\n-    { path: '**', redirectTo: '/home' },\n+  //  { path: '**', redirectTo: '/home' },\n     { path: 'home',component:ProductsComponent },\n     { path: 'form',component:FormComponent },\n ];\n \n"
+                },
+                {
+                    "date": 1700115939549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,12 @@\n import { ProductsComponent } from './pages/products/products.component';\n import { FormComponent } from './components/products/form/form.component';\n \n const routes: Routes = [\n-    { path: '', redirectTo: '/home', pathMatch: 'full' },\n-  //  { path: '**', redirectTo: '/home' },\n-    { path: 'home',component:ProductsComponent },\n-    { path: 'form',component:FormComponent },\n+  { path: 'home',component:ProductsComponent },\n+  { path: 'form',component:FormComponent },\n+  { path: '', redirectTo: '/home', pathMatch: 'full' },\n+  { path: '**', redirectTo: '/home' },\n ];\n \n @NgModule({\n   imports: [RouterModule.forRoot(routes)],\n"
+                },
+                {
+                    "date": 1700121234445,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n \n const routes: Routes = [\n   { path: 'home',component:ProductsComponent },\n   { path: 'form',component:FormComponent },\n+  { path: 'form/:id',component:FormComponent },\n   { path: '', redirectTo: '/home', pathMatch: 'full' },\n   { path: '**', redirectTo: '/home' },\n ];\n \n"
+                },
+                {
+                    "date": 1700122835102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n \n const routes: Routes = [\n   { path: 'home',component:ProductsComponent },\n   { path: 'form',component:FormComponent },\n-  { path: 'form/:id',component:FormComponent },\n+  { path: 'form/:id/:edit',component:FormComponent },\n   { path: '', redirectTo: '/home', pathMatch: 'full' },\n   { path: '**', redirectTo: '/home' },\n ];\n \n"
+                }
+            ],
+            "date": 1700101716442,
+            "name": "Commit-0",
+            "content": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { ProductsComponent } from './pages/products/products.component';\n\nconst routes: Routes = [\n  {\n    path: '/',\n    component:ProductsComponent}\n];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n"
+        }
+    ]
+}

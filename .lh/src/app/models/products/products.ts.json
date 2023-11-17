@@ -1,0 +1,18 @@
+{
+    "sourceFile": "src/app/models/products/products.ts",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1700091869555,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1700091869555,
+            "name": "Commit-0",
+            "content": "export interface Products {\n    id: number;\n    name: string;\n    price: number;\n    description: string;\n    image: string;\n    category: string;\n    rating: number;\n    quantity: number;\n    isFavourite: boolean;\n    isAvailable: boolean;\n    createdAt: string;\n    updatedAt: string;\n    deletedAt: string;\n    userId: number;\n    brandId: number;\n    sizeId: number;\n    colorId: number;\n    categoryId: number;\n    subCategoryId: number;\n    discountId: number;\n    taxId: number;\n    tagId: number;\n    variantId: number;\n    variantName: string;\n    variantPrice: number;\n    variantImage: string;\n    variantQuantity: number;\n    variantIsFavourite: boolean;\n    variantIsAvailable: boolean;\n    variantCreatedAt: string;\n    variantUpdatedAt: string;\n    variantDeletedAt: string;\n    variantUserId: number;\n    variantBrandId: number;\n    variantSizeId: number;\n    variantColorId: number;\n}\n"
+        }
+    ]
+}
