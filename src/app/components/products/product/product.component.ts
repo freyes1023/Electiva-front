@@ -37,6 +37,8 @@ export class ProductComponent implements OnInit {
     
       showCancelButton: true,
       confirmButtonText: "Eliminar",
+      timer: 3000,
+        timerProgressBar: true
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {

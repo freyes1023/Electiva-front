@@ -83,6 +83,10 @@ export class FormComponent implements OnInit {
   
   }
 
+  async atras(){
+    this.router.navigate(['/'],{replaceUrl:true})
+  }
+
   setImage(input: HTMLInputElement){
     this.viewAlertImg = true;
     this.img = input;

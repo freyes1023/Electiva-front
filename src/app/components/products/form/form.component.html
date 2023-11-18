@@ -1,5 +1,8 @@
 <div class="container">
     <form *ngIf="Product">
+        <h1>
+            <p class="text-center">Información Producto</p>
+        </h1>
         <div class="row">
             <div class="col-8 form-group">
                 <label for="tittle" class="col-form-label">Title</label>
@@ -42,5 +45,6 @@
         
         <hr/>
         <button *ngIf="mode != 'view'" class="btn btn-primary" type="submit" (click)="save()">Save</button>
+        <button class="btn btn-primary mx-3" type="submit" (click)="atras()">Atras</button>
     </form>
 </div>
